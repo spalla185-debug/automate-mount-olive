@@ -278,35 +278,42 @@ a:hover { color: #d97757; }
       </div>
     </sc-if>
     <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
-      <form data-reveal="100" onSubmit="{{ handleSubmit }}" style="flex:1 1 340px;min-width:min(100%,300px);border:1px solid var(--border);border-radius:var(--radius-card);padding:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:18px;box-shadow:0 18px 40px rgba(20,20,19,0.06);">
+      <form data-reveal="100" onSubmit="{{ handleSubmit }}" aria-busy="{{ submittingAttr }}" style="flex:1 1 340px;min-width:min(100%,300px);border:1px solid var(--border);border-radius:var(--radius-card);padding:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:18px;box-shadow:0 18px 40px rgba(20,20,19,0.06);">
         <div style="display:flex;flex-direction:column;gap:4px;">
           <span style="font-family:var(--font-head);font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-softer);">Or send us a note</span>
           <span style="font-family:var(--font-head);font-weight:600;font-size:20px;color:var(--text);">Not ready to pick a time?</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;">
           <div style="display:flex;flex-direction:column;gap:6px;">
-            <label style="font-family:var(--font-head);font-weight:500;font-size:13px;color:var(--ink-soft);">Name</label>
-            <input type="text" required="" placeholder="Jane Smith" style="border:1px solid var(--border-strong);border-radius:var(--radius-input);padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg);color:var(--text);transition:border-color .2s, box-shadow .2s;" style-focus="outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,0.15);" />
+            <label for="consult-name" style="font-family:var(--font-head);font-weight:500;font-size:13px;color:var(--ink-soft);">Name</label>
+            <input id="consult-name" name="name" type="text" required="{{ true }}" maxLength="100" autoComplete="name" placeholder="Jane Smith" style="border:1px solid var(--border-strong);border-radius:var(--radius-input);padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg);color:var(--text);transition:border-color .2s, box-shadow .2s;" style-focus="outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,0.15);" />
           </div>
           <div style="display:flex;flex-direction:column;gap:6px;">
-            <label style="font-family:var(--font-head);font-weight:500;font-size:13px;color:var(--ink-soft);">Email</label>
-            <input type="email" required="" placeholder="jane@business.com" style="border:1px solid var(--border-strong);border-radius:var(--radius-input);padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg);color:var(--text);transition:border-color .2s, box-shadow .2s;" style-focus="outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,0.15);" />
+            <label for="consult-email" style="font-family:var(--font-head);font-weight:500;font-size:13px;color:var(--ink-soft);">Email</label>
+            <input id="consult-email" name="email" type="email" required="{{ true }}" maxLength="254" autoComplete="email" placeholder="jane@business.com" style="border:1px solid var(--border-strong);border-radius:var(--radius-input);padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg);color:var(--text);transition:border-color .2s, box-shadow .2s;" style-focus="outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,0.15);" />
           </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-family:var(--font-head);font-weight:500;font-size:13px;color:var(--ink-soft);">Business type</label>
-          <select style="border:1px solid var(--border-strong);border-radius:var(--radius-input);padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg);color:var(--text);" style-focus="outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,0.15);">
-            <option>Real Estate</option>
-            <option>Contracting</option>
-            <option>Law</option>
-            <option>Other</option>
+          <label for="consult-business-type" style="font-family:var(--font-head);font-weight:500;font-size:13px;color:var(--ink-soft);">Business type</label>
+          <select id="consult-business-type" name="business_type" required="{{ true }}" style="border:1px solid var(--border-strong);border-radius:var(--radius-input);padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg);color:var(--text);" style-focus="outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,0.15);">
+            <option value="Real Estate">Real Estate</option>
+            <option value="Contracting">Contracting</option>
+            <option value="Law">Law</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <label style="font-family:var(--font-head);font-weight:500;font-size:13px;color:var(--ink-soft);">What's eating your time?</label>
-          <textarea rows="3" placeholder="e.g. following up with leads, scheduling site visits, client intake..." style="border:1px solid var(--border-strong);border-radius:var(--radius-input);padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg);color:var(--text);resize:vertical;" style-focus="outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,0.15);"></textarea>
+          <label for="consult-pain-point" style="font-family:var(--font-head);font-weight:500;font-size:13px;color:var(--ink-soft);">What's eating your time?</label>
+          <textarea id="consult-pain-point" name="pain_point" required="{{ true }}" maxLength="2000" rows="3" placeholder="e.g. following up with leads, scheduling site visits, client intake..." style="border:1px solid var(--border-strong);border-radius:var(--radius-input);padding:12px 14px;font-family:var(--font-body);font-size:15px;background:var(--bg);color:var(--text);resize:vertical;" style-focus="outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(217,119,87,0.15);"></textarea>
         </div>
-        <button type="submit" style="background:var(--accent);color:#fff;border:none;padding:14px 26px;border-radius:var(--radius-pill);font-family:var(--font-head);font-weight:600;font-size:15px;cursor:pointer;align-self:flex-start;box-shadow:0 8px 22px rgba(217,119,87,0.28);transition:background .2s, transform .2s;" style-hover="background:var(--accent-hover);transform:translateY(-2px);">Request a consultation</button>
+        <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+          <label for="consult-company-website">Company website</label>
+          <input id="consult-company-website" name="company_website" type="text" tabIndex="-1" autoComplete="off" />
+        </div>
+        <sc-if value="{{ submitError }}" hint-placeholder-val="{{ false }}">
+          <p role="alert" style="font-family:var(--font-body);font-size:14px;line-height:1.5;color:#a24f33;margin:0;padding:10px 14px;border-radius:var(--radius-input);background:var(--accent-tint);border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);">{{ submitError }}</p>
+        </sc-if>
+        <button type="submit" disabled="{{ submitting }}" style="background:var(--accent);color:#fff;border:none;padding:14px 26px;border-radius:var(--radius-pill);font-family:var(--font-head);font-weight:600;font-size:15px;cursor:pointer;align-self:flex-start;box-shadow:0 8px 22px rgba(217,119,87,0.28);transition:background .2s, transform .2s;" style-hover="background:var(--accent-hover);transform:translateY(-2px);" style-disabled="opacity:0.7;cursor:wait;transform:none;background:var(--accent);">{{ submitLabel }}</button>
         <span style="font-family:var(--font-body);font-size:13px;color:var(--ink-softer);">We reply instantly, using the same automation we build for clients. By submitting, you agree to our <a href="#privacy" style="color:#a24f33;">Privacy Policy</a>.</span>
       </form>
     </sc-if>
@@ -443,7 +450,8 @@ a:hover { color: #d97757; }
   &quot;faqAllowMultipleOpen&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;FAQ&quot;}
 }">
 class Component extends DCLogic {
-  state = { openFaqs: [0], submitted: false, tick: 0, vertical: 0, panelFlip: false, legal: null };
+  state = { openFaqs: [0], submitted: false, submitting: false, submitError: '', tick: 0, vertical: 0, panelFlip: false, legal: null };
+  formStartedAt = Date.now();
 
   onDocClick = (e) => {
     const a = e.target.closest && e.target.closest('a[href^="#"]');
@@ -513,7 +521,46 @@ class Component extends DCLogic {
     });
   };
 
-  handleSubmit = (e) => { e.preventDefault(); this.setState({ submitted: true }); };
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    // Guard against double clicks / Enter spam before React re-renders the disabled button.
+    if (this.inFlight || this.state.submitted) return;
+    const fd = new FormData(e.currentTarget);
+    const field = (k) => { const v = fd.get(k); return typeof v === 'string' ? v : ''; };
+    const payload = {
+      name: field('name'),
+      email: field('email'),
+      business_type: field('business_type'),
+      pain_point: field('pain_point'),
+      company_website: field('company_website'),
+      elapsed_ms: Date.now() - this.formStartedAt,
+    };
+    this.inFlight = true;
+    this.setState({ submitting: true, submitError: '' });
+    const fallback = "We couldn't send your request. Please try again, or email automatemountolive@gmail.com.";
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 15000);
+      const res = await fetch('/api/consult', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+        signal: ctrl.signal,
+      });
+      clearTimeout(timer);
+      let data = null;
+      try { data = await res.json(); } catch (_) {}
+      if (res.ok && data && data.ok) {
+        this.setState({ submitted: true, submitting: false });
+        return;
+      }
+      this.inFlight = false;
+      this.setState({ submitting: false, submitError: (data && data.error) || fallback });
+    } catch (_) {
+      this.inFlight = false;
+      this.setState({ submitting: false, submitError: fallback });
+    }
+  };
 
   buildFeed() {
     const h = React.createElement;
@@ -650,6 +697,10 @@ class Component extends DCLogic {
       submitted: this.state.submitted,
       notSubmitted: !this.state.submitted,
       handleSubmit: this.handleSubmit,
+      submitting: this.state.submitting,
+      submittingAttr: this.state.submitting ? 'true' : 'false',
+      submitLabel: this.state.submitting ? 'Sending…' : 'Request a consultation',
+      submitError: this.state.submitError,
       legalPrivacy: this.state.legal === 'privacy',
       legalTerms: this.state.legal === 'terms',
       closeLegal: () => this.setState({ legal: null }),

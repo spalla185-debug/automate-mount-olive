@@ -1,0 +1,12 @@
+{
+  "name": "automate-mount-olive",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "test": "node --test tests/*.test.js"
+  }
+}
