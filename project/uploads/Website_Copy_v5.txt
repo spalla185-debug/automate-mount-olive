@@ -1,0 +1,220 @@
+AUTOMATE MOUNT OLIVE | FULL WEBSITE COPY (Landing Page v5)
+
+NOTE: Anything in [[DOUBLE BRACKETS]] still needs a decision or real info from you. Clear every one before publishing.
+
+========================================
+HEADER / NAV
+========================================
+[A] Automate Mount Olive
+How it works · What we automate · Pricing · Proof · Team · FAQ
+[Book a free consult]
+
+========================================
+HERO
+========================================
+NJ-based · Real Estate · Contracting · Law
+
+Admin work, handled.
+
+Follow-ups, scheduling, and client intake that run on their own, built in 48 hours by two Mount Olive locals. For real estate, contracting, and law businesses.
+
+[Book a free consult]  [See how it works]
+
+• Free 30-minute consult
+• Built in 48 hours
+• One-click cancel
+
+--- Live activity card ---
+Example activity: what the system does for a business
+
+(Cycles through, newest on top; timestamps: just now / 3 min ago / 8 min ago / 14 min ago)
+Real Estate · New lead got a personal reply
+Law · Intake form routed to attorney
+Contracting · Estimate follow-up #2 sent
+Real Estate · Showing confirmed for Saturday
+Law · Consult reminder texted
+Contracting · Crew notified of Tuesday job
+Real Estate · E-sign reminder sent
+Contracting · Review request sent after job
+Law · Missed call texted back instantly
+Real Estate · Open house sign-ins added to CRM
+Contracting · Overdue invoice reminder sent
+Law · Retainer signed, client onboarded
+
+Example activity, not live client data. Runs 24/7 on n8n Cloud.
+
+========================================
+SCROLLING STRIP
+========================================
+Lead follow-ups · Showing scheduling · Client intake · Status updates · Estimate follow-ups · Crew notifications · Invoice reminders · Review requests · Document chasing
+
+========================================
+HOW IT WORKS
+========================================
+HOW IT WORKS
+From green light to running system in 48 hours.
+
+01 · 30 min
+Free consultation
+30 minutes, call or in person. We find the 2-3 tasks eating the most time in your business.
+
+02 · 48 hours
+Personalized build
+Two of us build in parallel, shaped around how your business actually runs.
+
+03 · Ongoing
+Go live
+It runs in the background. We monitor it and handle tweaks.
+
+========================================
+WHAT WE AUTOMATE
+========================================
+WHAT WE AUTOMATE
+Pick your business. See the work disappear.
+
+Tabs: Real Estate · Contracting · Law
+
+--- Real Estate ---
+1 When: A new lead comes in from Zillow or your CRM
+2 We: A personal text and email go out in seconds
+3 Result: The showing lands on your calendar
+Also handled: Follow-up sequences · Listing status updates · Document and e-sign chasing
+
+--- Contracting ---
+1 When: You send an estimate
+2 We: Follow-ups go out until they answer
+3 Result: The job is scheduled and the crew is notified
+Also handled: Invoice reminders · Review requests after job completion · Quote and estimate follow-ups
+
+--- Law ---
+1 When: Someone fills out your intake form
+2 We: It's triaged and routed to the right attorney
+3 Result: The consult is booked, reminders sent
+Also handled: Client status update emails · Consultation scheduling · Document collection reminders
+
+========================================
+PRICING
+========================================
+PRICING
+Pick the tier that fits how your business runs.
+
+Starter
+$199/mo
+$349 one-time setup
+- 1 automated workflow
+- Connects to your calendar + inbox
+- Monthly monitoring, 1 revision
+- Email support
+[Start free trial]
+
+Growth · Recommended
+$349/mo
+$549 one-time setup
+- Up to 3 automated workflows
+- CRM + calendar + inbox integration
+- Monthly monitoring, 2 revisions
+- Priority email + text support
+[Start free trial]
+
+Pro
+$549/mo
+$999 one-time setup
+- Unlimited workflows within scope
+- Full-stack integration (CRM, calendar, invoicing, docs)
+- Weekly monitoring, unlimited tweaks
+- Direct line to both founders
+[Start free trial]
+
+Custom
+For workflows built directly inside a CRM you already run. Scoped and quoted individually, with a monthly fee for monitoring and changes.
+Custom pricing
+[Contact for a quote]
+
+Starter, Growth, and Pro include a 14-day free trial of the monthly service. Card required to start. The one-time setup fee is charged at signup, the monthly fee starts after the trial, and we email you before the first charge. First billed month is 50% off. Cancel anytime, one click.
+
+========================================
+PROOF
+========================================
+PROOF
+Live for a local realtor.
+
+What we built for Tara: a speed-to-lead auto-responder for new leads, and a lease renewal campaign inside her BoldTrail CRM.
+
+[[ADD ONCE TARA REPLIES: one real number, like messages sent to how many contacts over how many weeks. Do not guess.]]
+
+Pull quote (display large, full quote below): "I can stay on top of those meaningful client connections without adding more to my plate."
+
+"Working with Automate Mt. Olive helps me stay engaged with my clients, show that I care, and maintain a professional, personal touch. In real estate, urgent matters can easily take priority, and the little things sometimes fall through the cracks.
+
+Thanks to Automate Mt. Olive, I can stay on top of those meaningful client connections without adding more to my plate. I can 'Set It and Let the System Do the Work!'"
+
+Tara Lauterbach
+Realtor · VP, Mount Olive Chamber of Commerce
+
+Introduced to the Mount Olive Chamber of Commerce through the Mayor's office.
+
+========================================
+MEET THE TEAM
+========================================
+MEET THE TEAM
+Two seniors. One 48-hour promise.
+We're seniors at Mount Olive High School. We built and run a live system for a local real estate agent. This isn't a class project.
+
+SM · Sven Morais
+Co-Founder & COO
+Runs operations and client communication, keeps every project on track, and checks every build before it goes live.
+
+SP · Sashi Palla
+Co-Founder & CTO
+Builds the workflow logic behind every system, from the first n8n node to testing, and helps run consultations and onboarding.
+
+Automate Mount Olive is an independent, student-run business. It is not a program of, or endorsed by, Mount Olive Township or the Mount Olive Chamber of Commerce.
+
+========================================
+FAQ
+========================================
+FAQ
+Fair questions, straight answers.
+
+Q: You're high school students. Why should we trust you with our business?
+A: Fair question. You can see exactly what we built and for whom in the Proof section. You start with a free 30-minute consult and a 14-day trial, so you're not betting anything big up front, and you can cancel in one click. We only connect to the tools you already use, with access you control.
+
+Q: We already have something in place.
+A: Good. We're not asking you to rip it out. In the free consultation we figure out what's actually working and automate around it, or replace only the piece that's costing you time. If your current setup already does the job, we'll tell you that too.
+
+Q: This seems expensive.
+A: Compare it to the hours you spend every week on follow-ups and scheduling. Setup is a flat one-time fee, and the monthly cost is less than a part-time hire. You also get a 14-day free trial and half off your first billed month, so you'll know it's worth it before you pay full price.
+
+Q: Is our data safe?
+A: We keep what we touch to a minimum. Workflows run on n8n Cloud, which encrypts stored data at rest (AES-256) and keeps each customer's instance separate. We only connect to the tools you already use, with access you control, and you can revoke it anytime. We don't sell or reuse your data. If you handle sensitive client info, like legal intake, we map out exactly what the automation touches in the free consult before we build anything.
+
+========================================
+CONTACT
+========================================
+CONTACT
+Book your free consultation.
+30 minutes, no obligation.
+
+[[SET UP BEFORE LAUNCH: a real email address on your own domain, replacing hello@[businessname].com]]
+[[SET UP BEFORE LAUNCH: one shared business phone number (like Google Voice) instead of both personal cell numbers]]
+Mount Olive, New Jersey
+
+Form:
+Name (placeholder: Jane Smith)
+Email (placeholder: jane@business.com)
+Business type: Real Estate / Contracting / Law / Other
+What's eating your time? (placeholder: e.g. following up with leads, scheduling site visits, client intake...)
+[Request a consultation]
+Prefer to pick a time right now? Book here: https://calendly.com/spalla185
+We reply within one business day.
+
+Success message:
+Thanks, we'll be in touch.
+Check your inbox. You'll get a confirmation right away, then a link to pick a time. We reply within one business day either way.
+
+========================================
+FOOTER
+========================================
+Automate Mount Olive
+© 2026 Automate Mount Olive (A.M.O). Built in Mount Olive, NJ.
+Independent, student-run business. Not affiliated with or endorsed by Mount Olive Township or the Mount Olive Chamber of Commerce. Testimonials reflect individual client experiences.
