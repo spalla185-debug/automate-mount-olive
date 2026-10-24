@@ -17,7 +17,7 @@ site/
 
 Only the "Not ready to pick a time?" form:
 
-- Fields now have `name`s and labels linked to inputs: `name`, `email`, `business_type`, `pain_point`, plus an off-screen `company_website` honeypot.
+- Fields now have `name`s and labels linked to inputs: `name`, `email`, `business_type`, `business_type_other` (shown only when "Other" is picked), `pain_point`, plus an off-screen `company_website` honeypot.
 - Submitting POSTs JSON to `/api/consult`. While it's sending, the button reads "Sending…" and is disabled. Double clicks and repeated Enter presses send only one request.
 - On success, the existing "Thanks, we'll be in touch." panel shows. On failure, an inline message appears above the button and everything the visitor typed stays in the form.
 - All four fields are required. "What's eating your time?" was optional in the design.
@@ -27,7 +27,7 @@ Only the "Not ready to pick a time?" form:
 
 | Case | Response | Forwarded to n8n? |
 |---|---|---|
-| Valid submission | `200 {"ok":true}` | Yes: exactly `name, email, business_type, pain_point, company_website:""` |
+| Valid submission | `200 {"ok":true}` | Yes: exactly `name, email, business_type, business_type_other, pain_point, company_website:""` |
 | Honeypot filled, or submitted under 1.5 s after page load | `200 {"ok":true}` (silent) | No |
 | Missing or invalid field | `422` with a message | No |
 | Same email + type + message within 10 min | `200 {"ok":true,"duplicate":true}` | No (already sent) |
@@ -38,7 +38,7 @@ Only the "Not ready to pick a time?" form:
 | `N8N_CONSULT_WEBHOOK_URL` not set | `500` | No |
 | Any method except POST | `405` | No |
 
-`pain_point` is forwarded exactly as typed: no trimming, escaping, or collapsing. `name` and `email` are trimmed.
+`pain_point` is forwarded exactly as typed: no trimming, escaping, or collapsing. `name`, `email`, and `business_type_other` are trimmed. `business_type_other` is required when `business_type` is `Other` (max 100 characters) and is sent as `""` otherwise.
 
 The rate limit and duplicate check live in memory on each function instance. They stop bursts but aren't a global guarantee. For a hard limit, add a Vercel Firewall rate-limit rule on `/api/consult` (Project → Firewall → Configure → Rate Limit) if your plan includes it. The n8n workflow should also drop any submission where `company_website` isn't empty.
 
@@ -84,7 +84,7 @@ The env var is set for **Production only**. Preview deployments (`vercel deploy`
 2. **Full end-to-end** (creates a real lead): open the site in a private window, scroll to Contact, fill the form with your own email and a multi-line message, and click "Request a consultation".
    - The button reads "Sending…" and then the thank-you panel appears.
    - In DevTools → Network, there is one `POST /api/consult` with status 200.
-   - n8n → Executions shows a new run of the `amo-consult` workflow. Its webhook body has the five fields, and `pain_point` matches what you typed exactly.
+   - n8n → Executions shows a new run of the `amo-consult` workflow. Its webhook body has the six fields, and `pain_point` matches what you typed exactly.
    - The Google Sheet row and confirmation email arrive (whatever your workflow does).
 3. **Calendly**: the embedded calendar loads, and "Open full calendar ↗" opens `calendly.com/spalla185/30min` in a new tab.
 4. If something fails: Vercel → Project → Logs, filter by `/api/consult`. Server errors are logged with a `[consult]` prefix.

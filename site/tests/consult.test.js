@@ -38,7 +38,7 @@ const valid = (over = {}) => ({
   ...over,
 });
 
-test('forwards exactly the five fields and preserves pain_point verbatim', async () => {
+test('forwards exactly the six fields and preserves pain_point verbatim', async () => {
   const f = mockFetch();
   const input = valid();
   const res = await handleConsult(req(input), { fetchImpl: f });
@@ -50,9 +50,34 @@ test('forwards exactly the five fields and preserves pain_point verbatim', async
     name: 'Jane Smith',
     email: input.email,
     business_type: 'Real Estate',
+    business_type_other: '',
     pain_point: input.pain_point,
     company_website: '',
   });
+});
+
+test('accepts the broader business types', async () => {
+  for (const business_type of ['Healthcare/Dental', 'Salon/Beauty', 'Restaurant', 'Home Services', 'Retail']) {
+    const f = mockFetch();
+    const res = await handleConsult(req(valid({ business_type })), { fetchImpl: f });
+    assert.equal(res.status, 200, business_type);
+    assert.equal(f.calls[0].body.business_type, business_type);
+  }
+});
+
+test('forwards the typed business type when Other is chosen', async () => {
+  const f = mockFetch();
+  const res = await handleConsult(req(valid({ business_type: 'Other', business_type_other: '  Auto repair ' })), { fetchImpl: f });
+  assert.equal(res.status, 200);
+  assert.equal(f.calls[0].body.business_type, 'Other');
+  assert.equal(f.calls[0].body.business_type_other, 'Auto repair');
+});
+
+test('ignores a typed business type unless Other is chosen', async () => {
+  const f = mockFetch();
+  const res = await handleConsult(req(valid({ business_type: 'Retail', business_type_other: 'Auto repair' })), { fetchImpl: f });
+  assert.equal(res.status, 200);
+  assert.equal(f.calls[0].body.business_type_other, '');
 });
 
 test('rejects non-POST with 405', async () => {
@@ -66,6 +91,8 @@ test('validation errors return 422 and do not forward', async () => {
     { name: '' },
     { email: 'not-an-email' },
     { business_type: 'Crypto' },
+    { business_type: 'Other', business_type_other: '   ' },
+    { business_type: 'Other', business_type_other: 'x'.repeat(101) },
     { pain_point: '   ' },
     { pain_point: 'x'.repeat(2001) },
   ]) {

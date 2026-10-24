@@ -1,10 +1,10 @@
 // Core logic for POST /api/consult. Kept framework-free (Web Request/Response)
 // so it runs on Vercel's Node.js runtime and can be tested locally with plain Node.
 
-export const BUSINESS_TYPES = ['Real Estate', 'Contracting', 'Law', 'Other'];
+export const BUSINESS_TYPES = ['Real Estate', 'Contracting', 'Law', 'Healthcare/Dental', 'Salon/Beauty', 'Restaurant', 'Home Services', 'Retail', 'Other'];
 
 const MAX_BODY_BYTES = 10 * 1024;
-const LIMITS = { name: 100, email: 254, pain_point: 2000 };
+const LIMITS = { name: 100, email: 254, business_type_other: 100, pain_point: 2000 };
 const MIN_FILL_MS = 1500; // faster than a human can fill the form
 const UPSTREAM_TIMEOUT_MS = 10_000;
 
@@ -66,6 +66,8 @@ export function validate(input) {
   const name = str(input.name).trim();
   const email = str(input.email).trim();
   const business_type = str(input.business_type).trim();
+  // Free-text type, only kept when "Other" is chosen.
+  const business_type_other = business_type === 'Other' ? str(input.business_type_other).trim() : '';
   // Forwarded exactly as typed: no trimming, collapsing or escaping.
   const pain_point = str(input.pain_point);
 
@@ -76,11 +78,13 @@ export function validate(input) {
   else if (email.length > LIMITS.email || !EMAIL_RE.test(email)) errors.email = 'Please enter a valid email address.';
 
   if (!BUSINESS_TYPES.includes(business_type)) errors.business_type = 'Please choose a business type.';
+  else if (business_type === 'Other' && !business_type_other) errors.business_type_other = 'Please tell us what kind of business you run.';
+  else if (business_type_other.length > LIMITS.business_type_other) errors.business_type_other = `Business type must be ${LIMITS.business_type_other} characters or fewer.`;
 
   if (!pain_point.trim()) errors.pain_point = "Please tell us what's eating your time.";
   else if (pain_point.length > LIMITS.pain_point) errors.pain_point = `Please keep this under ${LIMITS.pain_point} characters.`;
 
-  return { errors, data: { name, email, business_type, pain_point } };
+  return { errors, data: { name, email, business_type, business_type_other, pain_point } };
 }
 
 export async function handleConsult(request, { fetchImpl = fetch, now = Date.now() } = {}) {
@@ -124,7 +128,7 @@ export async function handleConsult(request, { fetchImpl = fetch, now = Date.now
     return json(429, { ok: false, error: 'Too many requests. Please wait a few minutes and try again.' }, { 'retry-after': '600' });
   }
 
-  const fingerprint = JSON.stringify([data.email.toLowerCase(), data.business_type, data.pain_point]);
+  const fingerprint = JSON.stringify([data.email.toLowerCase(), data.business_type, data.business_type_other, data.pain_point]);
   if (isDuplicate(fingerprint, now)) {
     // Same request already forwarded moments ago; don't create a second lead.
     return json(200, { ok: true, duplicate: true });
