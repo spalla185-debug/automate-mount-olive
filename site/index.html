@@ -103,7 +103,7 @@ a:hover { color: #d97757; }
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:16px;">
         <sc-for list="{{ steps }}" as="step" hint-placeholder-count="3">
           <div style="border-top:3px solid {{ step.color }};padding-top:14px;display:flex;flex-direction:column;gap:6px;">
-            <span style="font-family:var(--font-head);font-weight:600;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-softer);">{{ step.num }} &middot; {{ step.time }}</span>
+            <span style="font-family:var(--font-head);font-weight:600;font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-softer);">{{ step.num }}</span>
             <span style="font-family:var(--font-head);font-weight:600;font-size:17px;color:var(--text);">{{ step.title }}</span>
             <span style="font-family:var(--font-body);font-size:14.5px;line-height:1.5;color:var(--ink-soft);">{{ step.desc }}</span>
           </div>
@@ -188,7 +188,7 @@ a:hover { color: #d97757; }
     </div>
     <sc-if value="{{ trialOfferVisible }}" hint-placeholder-val="{{ true }}">
       <div data-reveal="0" style="margin-top:28px;display:flex;flex-direction:column;gap:16px;padding:clamp(20px,3vw,28px);border-radius:var(--radius-card);background:var(--accent-tint);border:1px solid color-mix(in srgb, var(--accent) 25%, transparent);">
-        <span style="display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:600;font-size:17px;color:var(--text);"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;"></span>7-day free trial on Growth and Pro</span>
+        <span style="display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:600;font-size:17px;color:var(--text);"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;"></span>30-day free trial on Growth and Pro</span>
         <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px 28px;">
           <li style="font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink-soft);padding-left:18px;position:relative;" style-before="content:'';position:absolute;left:0;top:0.55em;width:7px;height:7px;border-radius:50%;background:var(--accent);">Cancel before it ends and you pay nothing.</li>
           <li style="font-family:var(--font-body);font-size:15px;line-height:1.5;color:var(--ink-soft);padding-left:18px;position:relative;" style-before="content:'';position:absolute;left:0;top:0.55em;width:7px;height:7px;border-radius:50%;background:var(--accent);">After the trial, your card is charged and charges are non-refundable.</li>
@@ -421,7 +421,7 @@ a:hover { color: #d97757; }
     <main style="margin:0 auto;max-width:760px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,40px);display:flex;flex-direction:column;gap:28px;">
     <div>
       <h1 style="font-family:'Poppins', sans-serif;font-weight:600;font-size:clamp(32px,5vw,48px);letter-spacing:-0.02em;line-height:1.1;margin:0;">Terms of Service</h1>
-      <p style="font-size:14px;color:rgba(20,20,19,0.6);margin:10px 0 0;">Last updated October 13, 2026</p>
+      <p style="font-size:14px;color:rgba(20,20,19,0.6);margin:10px 0 0;">Last updated October 26, 2026</p>
     </div>
     <p style="font-size:16.5px;line-height:1.7;margin:0;">These terms cover your use of this website and any services you buy from Automate Mount Olive ("we," "us"). By booking a consultation or starting a plan, you agree to them.</p>
 
@@ -435,7 +435,7 @@ a:hover { color: #d97757; }
       <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:1.65;">
         <li>Growth: $249 one-time setup, then $9.99/month. Up to 3 workflows.</li>
         <li>Pro: $299 one-time setup, then $19.99/month. Up to 6 workflows.</li>
-        <li>Growth and Pro include a 7-day free trial. A card is required to start. If you don't cancel before the trial ends, your card is charged the setup fee and first monthly fee.</li>
+        <li>Growth and Pro include a 30-day free trial. A card is required to start. If you don't cancel before the trial ends, your card is charged the setup fee and first monthly fee.</li>
         <li>Charges made after the trial ends are non-refundable.</li>
         <li>Custom plans are quoted individually.</li>
       </ul>
@@ -638,10 +638,6 @@ class Component extends DCLogic {
       style: { background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 26, padding: 22, boxShadow: '0 24px 60px rgba(20,20,19,0.10)', display: 'flex', flexDirection: 'column', gap: 10 },
       'aria-label': 'Example automations running',
     },
-      h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '2px 4px 10px' } },
-        h('span', { style: { display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'var(--font-head)', fontWeight: 600, fontSize: 14 } },
-          h('span', { style: { width: 9, height: 9, borderRadius: '50%', background: 'var(--green)', animation: 'pulse 2s ease-out infinite' } }),
-          'Example activity: what the system does for a business')),
       ...rows,
       h('div', { style: { display: 'flex', justifyContent: 'space-between', gap: 12, padding: '10px 4px 0', flexWrap: 'wrap', fontFamily: 'var(--font-body)', fontSize: 12.5, color: 'var(--ink-softer)' } },
         h('span', null, 'Example activity, not live client data.'), h('span', null, 'Runs 24/7 on n8n Cloud.')));
@@ -674,9 +670,9 @@ class Component extends DCLogic {
     });
 
     const faqsRaw = [
-      { q: "You're high school students. Why should we trust you with our business?", a: "Fair question. You can see exactly what we built and for whom in the Testimonial section. You start with a free 30-minute consult and a 7-day free trial, so you're not betting anything up front, and you can cancel anytime in one step. We only connect to the tools you already use, with access you control." },
-      { q: 'We already have something in place.', a: "Good. We're not asking you to rip it out. In the free consultation we figure out what's actually working and automate around it, or replace only the piece that's costing you time. If your current setup already does the job, we'll tell you that too." },
-      { q: 'This seems expensive.', a: "Compare it to the hours you spend every week on follow-ups and scheduling. It's a one-time setup of $249 or $299, then under $20 a month, far less than a part-time hire. Try it free for 7 days so you can see it working before you decide." },
+      { q: "You're high school students. Why should we trust you with our business?", a: "Fair question. Every solution is built around your business and what you actually need. We're transparent about how everything works, and we'll keep you in the loop and make adjustments together as your needs evolve. You start with a free 30-minute consult and a 30-day free trial, so you're not betting anything up front, and you can cancel anytime in one step. We only connect to the tools you already use, with access you control." },
+      { q: 'We already have something in place.', a: "Good! That's a great starting point. During your free consultation, we'll look at what's already working and explore how we can build around your existing systems. Where it's technically feasible, we connect to the CRM, software, and workflows you already use rather than replacing them. If your current setup already does the job, we'll tell you that too." },
+      { q: 'This seems expensive.', a: "Compare it to the hours you spend every week on follow-ups and scheduling. It's a one-time setup of $249 or $299, then under $20 a month, far less than a part-time hire. Try it free for 30 days so you can see it working before you decide." },
       { q: 'Is our data safe?', a: "We keep what we touch to a minimum. Workflows run on n8n Cloud, which encrypts stored data at rest (AES-256) and keeps each customer's instance separate. We only connect to the tools you already use, with access you control, and you can revoke it anytime. We don't sell or reuse your data. If you handle sensitive client info, like legal intake, we map out exactly what the automation touches in the free consult before we build anything." },
     ];
     const faqs = faqsRaw.map((f, i) => {
@@ -689,10 +685,10 @@ class Component extends DCLogic {
     });
 
     const verticals = [
-      { name: 'Real Estate', color: 'var(--blue)', flow: ['A new lead comes in from Zillow or your CRM', 'A personal text and email go out in seconds', 'The showing lands on your calendar'], items: ['Follow-up sequences', 'Listing status updates', 'Document and e-sign chasing'] },
-      { name: 'Contracting', color: 'var(--accent)', flow: ['You send an estimate', 'Follow-ups go out until they answer', 'The job is scheduled and the crew is notified'], items: ['Invoice reminders', 'Review requests after job completion', 'Quote and estimate follow-ups'] },
-      { name: 'Law', color: 'var(--green)', flow: ['Someone fills out your intake form', 'It\u2019s triaged and routed to the right attorney', 'The consult is booked, reminders sent'], items: ['Client status update emails', 'Consultation scheduling', 'Document collection reminders'] },
-      { name: 'Your business', color: 'var(--surface-2)', flow: ['A new inquiry, booking request, or repeat task comes in', 'Reply, route it, and follow up automatically', 'Nothing slips through and you get your time back'], items: ['Appointment reminders', 'Follow-up emails', 'Customer intake forms'], note: 'If it’s repetitive, we can automate it. Dental offices, salons, restaurants, retail shops, property managers, accountants, and more.' },
+      { name: 'Real Estate', color: 'var(--blue)', flow: ['A new lead comes in from Zillow or your CRM', 'A personalized text and email are sent automatically', 'The lead can book a showing directly on your calendar'], items: ['Follow-up sequences', 'Listing status updates', 'Document and e-sign chasing'] },
+      { name: 'Contracting', color: 'var(--accent)', flow: ['You send an estimate', 'Follow-up reminders go out until the client replies', 'When they say yes, the job is scheduled and your crew is notified'], items: ['Invoice reminders', 'Review requests after job completion', 'Quote and estimate follow-ups'] },
+      { name: 'Law', color: 'var(--green)', flow: ['Someone fills out your intake form', 'The inquiry is triaged and routed to the right attorney', 'The client can book a consult, with reminders sent automatically'], items: ['Client status update emails', 'Consultation scheduling', 'Document collection reminders'] },
+      { name: 'Your business', color: 'var(--surface-2)', flow: ['A new inquiry, booking request, or repeat task comes in', 'It\u2019s answered, routed, and followed up on automatically', 'Fewer things slip through the cracks, and you get time back'], items: ['Appointment reminders', 'Follow-up emails', 'Customer intake forms'], note: 'If it’s repetitive, we can automate it. Dental offices, salons, restaurants, retail shops, property managers, accountants, and more.' },
     ];
     const vi = this.state.vertical;
     const av = verticals[vi];
@@ -704,14 +700,14 @@ class Component extends DCLogic {
         style: `display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;border:none;cursor:pointer;font-family:var(--font-head);font-weight:600;font-size:14px;transition:background .25s ease, color .25s ease;background:${sel ? 'var(--text)' : 'transparent'};color:${sel ? 'var(--bg)' : 'var(--text)'};`,
       };
     });
-    const labels = ['When', 'We', 'Result'];
+    const labels = ['When', 'Automation', 'Result'];
 
     return {
       feedCard: this.buildFeed(),
       steps: [
-        { num: '01', time: '30 min', color: 'var(--accent)', delay: '0', fillDelay: '150', title: 'Free consultation', desc: 'We find the 2-3 tasks costing you the most time.' },
-        { num: '02', time: '48 hours', color: 'var(--blue)', delay: '110', fillDelay: '550', title: 'Custom build', desc: 'Built around how you already work.' },
-        { num: '03', time: 'Ongoing', color: 'var(--green)', delay: '220', fillDelay: '950', title: 'Go live', desc: 'Runs 24/7. We monitor and tweak.' },
+        { num: '01', color: 'var(--accent)', delay: '0', fillDelay: '150', title: 'Free consultation', desc: 'We find the 2-3 tasks costing you the most time.' },
+        { num: '02', color: 'var(--blue)', delay: '110', fillDelay: '550', title: 'Custom build', desc: 'Built around how you already work.' },
+        { num: '03', color: 'var(--green)', delay: '220', fillDelay: '950', title: 'Go live', desc: 'Runs 24/7. We monitor and tweak.' },
       ],
       verticalTabs,
       activeColor: av.color,
