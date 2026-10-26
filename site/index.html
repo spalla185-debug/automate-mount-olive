@@ -65,7 +65,7 @@ a:hover { color: #d97757; }
     <nav style="display:flex;align-items:center;gap:clamp(14px,2vw,26px);flex-wrap:wrap;">
       <a href="#how" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--surface-2);text-underline-offset:4px;font-size:14.5px;font-weight:500;" style-hover="text-decoration-color:var(--accent);color:var(--accent);">How it works</a>
       <a href="#pricing" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--surface-2);text-underline-offset:4px;font-size:14.5px;font-weight:500;" style-hover="text-decoration-color:var(--accent);color:var(--accent);">Pricing</a>
-      <a href="#proof" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--surface-2);text-underline-offset:4px;font-size:14.5px;font-weight:500;" style-hover="text-decoration-color:var(--accent);color:var(--accent);">Proof</a>
+      <a href="#testimonial" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--surface-2);text-underline-offset:4px;font-size:14.5px;font-weight:500;" style-hover="text-decoration-color:var(--accent);color:var(--accent);">Testimonial</a>
       <a href="#faq" style="color:var(--text);text-decoration:underline;text-decoration-color:var(--surface-2);text-underline-offset:4px;font-size:14.5px;font-weight:500;" style-hover="text-decoration-color:var(--accent);color:var(--accent);">FAQ</a>
       <a href="#contact" style="background:var(--accent);color:#fff;padding:10px 20px;border-radius:var(--radius-pill);font-family:var(--font-head);font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap;transition:background .2s, transform .2s;" style-hover="background:var(--accent-hover);color:#fff;transform:translateY(-1px);">Book a free consult</a>
     </nav>
@@ -200,11 +200,11 @@ a:hover { color: #d97757; }
   </div>
 </section>
 
-<section id="proof" style="background:var(--text);color:var(--bg);padding:clamp(56px,7vw,96px) 0;position:relative;overflow:hidden;">
+<section id="testimonial" style="background:var(--text);color:var(--bg);padding:clamp(56px,7vw,96px) 0;position:relative;overflow:hidden;">
   <span style="position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);"></span>
   <span style="position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;border:1px solid color-mix(in srgb, var(--accent) 30%, transparent);"></span>
   <div style="max-width:var(--maxw);margin:0 auto;padding:0 var(--edge);position:relative;">
-    <span style="display:block;font-family:var(--font-head);font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;">Proof &middot; Live for a local realtor</span>
+    <span style="display:block;font-family:var(--font-head);font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;">Testimonial &middot; Live for a local realtor</span>
     <figure data-reveal="0" style="margin:0;display:flex;flex-direction:column;gap:clamp(20px,3vw,32px);">
       <figcaption style="display:flex;flex-direction:column;gap:12px;">
         <span style="font-family:var(--font-head);font-weight:600;font-size:clamp(52px,10vw,136px);line-height:0.95;letter-spacing:-0.04em;color:var(--bg);">Tara <span style="font-family:var(--font-accent);font-style:italic;font-weight:600;letter-spacing:-0.01em;color:var(--accent);font-size:1.08em;">Lauterbach</span></span>
@@ -674,7 +674,7 @@ class Component extends DCLogic {
     });
 
     const faqsRaw = [
-      { q: "You're high school students. Why should we trust you with our business?", a: "Fair question. You can see exactly what we built and for whom in the Proof section. You start with a free 30-minute consult and a 7-day free trial, so you're not betting anything up front, and you can cancel anytime in one step. We only connect to the tools you already use, with access you control." },
+      { q: "You're high school students. Why should we trust you with our business?", a: "Fair question. You can see exactly what we built and for whom in the Testimonial section. You start with a free 30-minute consult and a 7-day free trial, so you're not betting anything up front, and you can cancel anytime in one step. We only connect to the tools you already use, with access you control." },
       { q: 'We already have something in place.', a: "Good. We're not asking you to rip it out. In the free consultation we figure out what's actually working and automate around it, or replace only the piece that's costing you time. If your current setup already does the job, we'll tell you that too." },
       { q: 'This seems expensive.', a: "Compare it to the hours you spend every week on follow-ups and scheduling. It's a one-time setup of $249 or $299, then under $20 a month, far less than a part-time hire. Try it free for 7 days so you can see it working before you decide." },
       { q: 'Is our data safe?', a: "We keep what we touch to a minimum. Workflows run on n8n Cloud, which encrypts stored data at rest (AES-256) and keeps each customer's instance separate. We only connect to the tools you already use, with access you control, and you can revoke it anytime. We don't sell or reuse your data. If you handle sensitive client info, like legal intake, we map out exactly what the automation touches in the free consult before we build anything." },
