@@ -201,8 +201,8 @@ a:hover { color: #d97757; }
           <sc-if value="{{ tier.isStandard }}" hint-placeholder-val="{{ true }}">
             <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:var(--radius-pill);background:var(--accent-tint);border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);font-family:var(--font-head);font-weight:600;font-size:13.5px;color:#a24f33;"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;"></span>30-day free trial</span>
             <div style="display:flex;flex-direction:column;gap:4px;">
-              <span style="font-family:var(--font-body);font-size:14px;color:var(--ink-soft);"><span style="font-family:var(--font-accent);font-weight:600;font-size:32px;line-height:1.1;color:var(--text);">{{ tier.setup }}</span> one-time setup</span>
-              <span style="font-family:var(--font-body);font-size:14px;color:var(--ink-soft);">then <span style="font-family:var(--font-accent);font-weight:600;font-size:32px;line-height:1.1;color:var(--text);">{{ tier.monthly }}</span>/mo</span>
+              <span style="font-family:var(--font-body);font-size:14px;color:var(--ink-soft);"><span style="font-family:var(--font-head);font-weight:600;font-size:28px;line-height:35.2px;letter-spacing:-0.01em;font-variant-numeric:lining-nums tabular-nums;color:var(--text);">{{ tier.setup }}</span> one-time setup</span>
+              <span style="font-family:var(--font-body);font-size:14px;color:var(--ink-soft);">then <span style="font-family:var(--font-head);font-weight:600;font-size:28px;line-height:35.2px;letter-spacing:-0.01em;font-variant-numeric:lining-nums tabular-nums;color:var(--text);">{{ tier.monthly }}</span>/mo</span>
             </div>
             <sc-if value="{{ tier.workflows }}" hint-placeholder-val="{{ false }}">
               <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:14px;border:1.5px solid var(--accent);background:var(--accent-tint);">
